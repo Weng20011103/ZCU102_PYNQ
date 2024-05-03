@@ -1,0 +1,41 @@
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-3-4f1916faaf9b> in <module>
+----> 1 overlay = Overlay('gpio_clk_1.bit')
+
+/usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/overlay.py in __init__(self, bitfile_name, dtbo, download, ignore_version, device)
+    352 
+    353         if download:
+--> 354             self.download()
+    355 
+    356         self.__doc__ = _build_docstring(self._ip_map._description,
+
+/usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/overlay.py in download(self, dtbo)
+    418                     Clocks.set_pl_clk(i)
+    419 
+--> 420         super().download(self.parser)
+    421         if dtbo:
+    422             super().insert_dtbo(dtbo)
+
+/usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/bitstream.py in download(self, parser)
+    185 
+    186         """
+--> 187         self.device.download(self, parser)
+    188 
+    189     def remove_dtbo(self):
+
+/usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/pl_server/embedded_device.py in download(self, bitstream, parser)
+    596             fd.write(bitstream.binfile_name)
+    597 
+--> 598         self.set_axi_port_width(parser)
+    599 
+    600         self._xrt_download(parser.xclbin_data)
+
+/usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/pl_server/embedded_device.py in set_axi_port_width(self, parser)
+    560             # Setting port widths not supported for xclbin-only designs
+    561             return
+--> 562         parameter_dict = parser.ip_dict[parser.ps_name]['parameters']
+    563         if parser.family_ps == 'zynq_ultra_ps_e':
+    564             for para in ZU_FPD_SLCR_REG:
+
+KeyError: ''
