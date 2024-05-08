@@ -1,0 +1,4 @@
+Type:        property
+String form: <property object at 0xffff695302c0>
+Docstring:  
+True if DMA engine is in an error state

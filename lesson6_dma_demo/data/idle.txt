@@ -1,0 +1,6 @@
+Type:        property
+String form: <property object at 0xffff69530270>
+Docstring:  
+True if the DMA engine is idle
+
+`transfer` can only be called when the DMA is idle

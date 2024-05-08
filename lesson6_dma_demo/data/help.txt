@@ -1,0 +1,36 @@
+Type:           DMA
+String form:    <pynq.lib.dma.DMA object at 0xffff68fc4910>
+File:           /usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/lib/dma.py
+Docstring:     
+Class for Interacting with the AXI Simple DMA Engine
+
+This class provides two attributes for the read and write channels.
+The read channel copies data from the stream into memory and
+the write channel copies data from memory to the output stream.
+Both channels have an identical API consisting of `transfer` and
+`wait` functions. If interrupts have been enabled and connected
+for the DMA engine then `wait_async` is also present.
+
+Buffers to be transferred must be a `PynqBuffer` object allocated
+through `pynq.allocate()` function either directly or indirectly. This
+means that Frames from the video subsystem can be transferred using
+this class.
+
+Attributes
+----------
+recvchannel : _SDMAChannel / _SGDMAChannel
+    The stream to memory channel  (if enabled in hardware)
+sendchannel : _SDMAChannel / _SGDMAChannel
+    The memory to stream channel  (if enabled in hardware)
+buffer_max_size : int
+    The maximum DMA transfer length.
+Init docstring:
+Create an instance of the DMA Driver
+
+For DMA, max transfer length is (2^sg_length_width -1).
+See PG021 tables 2-15, 2-25, 2-31 and 2-38.
+
+Parameters
+----------
+description : dict
+    The entry in the IP dict describing the DMA engine

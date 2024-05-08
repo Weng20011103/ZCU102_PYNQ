@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------
+RuntimeError                              Traceback (most recent call last)
+<ipython-input-23-1a476d886e01> in <module>
+----> 1 dma_recv.transfer(output_buffer)
+
+/usr/local/share/pynq-venv/lib/python3.8/site-packages/pynq/lib/dma.py in transfer(self, array, start, nbytes)
+    172             raise RuntimeError('DMA channel not started')
+    173         if not self.idle and not self._first_transfer:
+--> 174             raise RuntimeError('DMA channel not idle')
+    175         if nbytes == 0:
+    176             nbytes = array.nbytes - start
+
+RuntimeError: DMA channel not idle

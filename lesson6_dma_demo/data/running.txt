@@ -1,0 +1,4 @@
+Type:        property
+String form: <property object at 0xffff69530220>
+Docstring:  
+True if the DMA engine is currently running
