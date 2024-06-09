@@ -1,0 +1,22 @@
+2023/9/23 08:32
+$cd /home/ollie/PYNQ/sdbuild
+
+$PATH=/opt/qemu/bin:/opt/crosstool-ng/bin:$PATH
+
+$source ~/Xilinx/Vitis/2020.2/settings64.sh
+
+$source ~/Xilinx/Vivado/2020.2/settings64.sh
+
+$source ~/Xilinx/petalinux/2020.2/settings.sh
+
+$make boot\_files BOARDS=ZCU102
+
+$make images BOARDS=ZCU102 PREBUILT=./prebuilt/focal.aarch64.2.7.0_2021_11_17.tar.gz
+
+# if nothing error whan making image skip the text below
+2023/9/23 11:20
+#isl error
+#download at http://mirror.sobukus.de/files/src/isl/
+
+參考: https://blog.csdn.net/ssunrt/article/details/125218877
+
